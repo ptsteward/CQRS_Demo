@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CQRS_Demo.UI.TodoItemListView">
+    <ListView x:Name="listView" Margin="20" ItemsSource="{Binding TodoItems}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                        <Entry Text="{Binding Description}" HorizontalOptions="StartAndExpand" />
+                        <Switch IsToggled="{Binding Done}" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Footer>
+            <StackLayout Margin="10">
+                <Button Text="Add Item" Command="{Binding AddItemCommand}"/>
+                <Button Text="Delete Done" Command="{Binding DeleteDoneCommand}"/>
+            </StackLayout>
+        </ListView.Footer>
+    </ListView>
+</ContentPage>

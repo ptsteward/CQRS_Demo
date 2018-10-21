@@ -1,4 +1,8 @@
-﻿using System;
+﻿using CQRS_Demo.DataModel;
+using CQRS_Demo.Framework;
+using CQRS_Demo.UI;
+using SimpleInjector;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,23 +14,14 @@ namespace CQRS_Demo
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
-        }
-
-        protected override void OnStart()
-        {
-            // Handle when your app starts
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle when your app resumes
-        }
+            var container = new Container();
+            container.RegisterInstance(new TodoAppState());
+            container.Register(typeof(IStateStore<>), typeof(StateStore<>));
+            container.Register<IMessageBus, MessageBus>();
+            container.Register(typeof(IAppCommandHandler<>), typeof(App).Assembly);
+            container.Register(typeof(IAppQueryHandler<,>), typeof(App).Assembly);
+            var todoView = container.GetInstance<TodoItemListView>();
+            MainPage = todoView;
+        }        
     }
 }
