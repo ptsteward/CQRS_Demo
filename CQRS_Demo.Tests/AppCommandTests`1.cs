@@ -5,6 +5,5 @@ using System.Linq;
 
 namespace Tests
 {
-    [TestFixture]
     public abstract class AppCommandTests<TCommand> : MessageTests<TCommand> where TCommand : class, IAppCommand { }
 }

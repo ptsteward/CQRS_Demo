@@ -7,7 +7,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Tests.Tests
@@ -19,8 +18,8 @@ namespace Tests.Tests
         {
             new DefaultArgument(nameof(SampleQueryMessage.Arg1), "abc"),
             new DefaultArgument(nameof(SampleQueryMessage.Arg2), "def"),
-            new DefaultArgument(nameof(SampleQueryMessage.Arg3), 23)
-        };        
+            new DefaultArgument(nameof(SampleQueryMessage.Arg3), 23, skipNullCheck: true)
+        };          
     }
 
     [TestFixture]

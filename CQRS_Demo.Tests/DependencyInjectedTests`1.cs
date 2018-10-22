@@ -6,11 +6,10 @@ using System.Reflection;
 
 namespace Tests
 {
-    [TestFixture]
     public abstract class DependencyInjectedTests<T> where T : class
     {
         [Test]
-        private void DependenciesAreNullChecked()
+        public void DependenciesAreNullChecked()
         {
             typeof(T).GetConstructors().ToList().ForEach(constructor =>
             {

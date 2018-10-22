@@ -5,6 +5,5 @@ using System.Linq;
 
 namespace Tests
 {
-    [TestFixture]
     public abstract class AppQueryTests<TQuery, TReply> : MessageTests<TQuery> where TQuery : class, IAppQuery<TReply> { }
 }
