@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\Messaging\API\Tertiary\" />
+    <Folder Include="Core\Messaging\API\Secondary\" />
+    <Folder Include="Core\Messaging\API\Primary\" />
+    <Folder Include="Core\Messaging\Authentication\" />
+    <Folder Include="Core\Messaging\Navigation\" />
+    <Folder Include="Core\Messaging\User\" />
+    <Folder Include="DataModel\Messaging\Navigation\" />
+    <Folder Include="DataModel\Messaging\Authentication\" />
+    <Folder Include="DataModel\Messaging\API\" />
+    <Folder Include="DataModel\Messaging\User\" />
+    <Folder Include="UI\" />
+  </ItemGroup>
+
+</Project>
