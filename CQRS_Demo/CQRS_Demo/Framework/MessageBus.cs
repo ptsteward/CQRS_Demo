@@ -25,7 +25,7 @@ namespace CQRS_Demo.Framework
         {
             try
             {
-                var handlerType = typeof(IAppCommandHandler<>).MakeGenericType(message.GetType());
+                var handlerType = typeof(IAppCommandHandler<>).MakeGenericType(message.Command.GetType());
                 var handler = container.GetInstance(handlerType);
                 var handleMethod = handler.GetType().GetMethod(nameof(IAppCommandHandler<IAppCommand>.HandleAsync));
                 await (Task)handleMethod.Invoke(handler, new[] { message.Command });

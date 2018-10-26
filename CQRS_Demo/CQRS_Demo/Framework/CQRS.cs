@@ -1,11 +1,4 @@
-﻿using Microsoft.AppCenter.Crashes;
-using SimpleInjector;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading.Tasks.Dataflow;
+﻿using System.Threading.Tasks;
 
 namespace CQRS_Demo.Framework
 {
